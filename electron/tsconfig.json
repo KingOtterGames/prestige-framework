@@ -1,14 +1,12 @@
 {
     "compilerOptions": {
-      "target": "es5",
-      "module": "commonjs",
-      "sourceMap": true,
-      "strict": true,
-      "outDir": "../build",
-      "rootDir": "../",
-      "noEmitOnError": true,
-      "typeRoots": [
-        "node_modules/@types"
-      ]
+        "target": "es5",
+        "module": "commonjs",
+        "sourceMap": true,
+        "strict": true,
+        "outDir": "../build",
+        "rootDir": "../",
+        "noEmitOnError": true,
+        "typeRoots": ["node_modules/@types"]
     }
-  }
+}
