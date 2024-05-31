@@ -1,20 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import './App.css'
+import { useEffect } from 'react'
 
 function App() {
-    const [data, setData] = useState([])
-
     useEffect(() => {
-        window.api.save({ data: 'testing a save' })
+        // Load Data through promise
+        // If found, set state correctly and patch/update
+        // If didn't find, set default save
     }, [])
-
     return (
         <div className="App">
-            <header className="App-header">
-                {data.map((row, i) => {
-                    return <p key={'row-' + i}>{JSON.stringify(row)}</p>
-                })}
-            </header>
+            <header className="App-header"></header>
         </div>
     )
 }

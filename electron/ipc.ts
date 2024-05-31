@@ -38,11 +38,29 @@ export const init = (ipcMain: IpcMain, steamClient: any, db: any, gamedir: strin
     })
 
     ipcMain.handle('load', (event) => {
-        return null
+        return new Promise((res, rej) => {
+            // Logging
+            console.log('====> Currently Saving data...')
+
+            // Attempt to Load Data
+            try {
+                const data = fs.readFileSync(gamedir + '/save.json', 'utf8')
+                console.log('= Found data and returning it')
+                res(JSON.parse(data))
+            } catch (err) {
+                console.log('= Failed to find a save... Returning null')
+                res(null)
+            }
+        })
     })
 
     ipcMain.handle('delete', (event) => {
-        return null
+        try {
+            fs.unlinkSync(gamedir + '/save.json')
+            console.log('Save has been deleted...')
+        } catch (err) {
+            console.error(err)
+        }
     })
 
     ipcMain.handle('db', (event, query) => {
