@@ -9,10 +9,13 @@ contextBridge.exposeInMainWorld('api', {
     delete: () => {
         return ipcRenderer.invoke('delete')
     },
-    db: (query: String) => {
+    db: (query: string) => {
         return ipcRenderer.invoke('db', query)
     },
-    achievement: (key: String) => {
+    achievement: (key: string) => {
         return ipcRenderer.invoke('achievement', key)
+    },
+    link: (url: string) => {
+        return ipcRenderer.invoke('link', url)
     },
 })

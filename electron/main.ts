@@ -32,6 +32,26 @@ const db = require('better-sqlite3')(path.join(__dirname, 'data', 'database.db')
 })
 
 /**
+ * Pre-load Options for Chromium
+ */
+app.commandLine.appendSwitch('in-process-gpu')
+app.commandLine.appendSwitch('disable-direct-composition')
+app.commandLine.appendSwitch('disable-renderer-backgrounding')
+app.commandLine.appendSwitch('disable-audio-output')
+app.commandLine.appendSwitch('disable-background-timer-throttling')
+app.commandLine.appendSwitch('disable-accelerated-2d-canvas')
+app.commandLine.appendSwitch('disable-accelerated-mjpeg-decode')
+app.commandLine.appendSwitch('disable-accelerated-video-decode')
+app.commandLine.appendSwitch('disable-accelerated-video-encode')
+
+/**
+ * Options to enable WORSE CASE for memory issues, BUT Steam Overlay will not show
+ */
+//app.commandLine.appendSwitch('disable-gpu-compositing')
+//app.commandLine.appendSwitch('disable-gpu')
+//app.disableHardwareAcceleration()
+
+/**
  * Connect to Steamworks
  */
 let steamClient: any
@@ -107,3 +127,22 @@ app.whenReady().then(() => {
         }
     })
 })
+
+/**
+ * Catching Errors
+ */
+process.on('uncaughtException', function (err) {
+    console.log(err)
+})
+
+process.on('unhandledRejection', function (err) {
+    console.log(err)
+})
+
+/**
+ * Enable Single Instance of Game
+ */
+let isSingleInstance = app.requestSingleInstanceLock()
+if (!isSingleInstance) {
+    app.quit()
+}

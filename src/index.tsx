@@ -10,9 +10,14 @@ declare global {
             delete: Function
             db: Function
             achievement: Function
+            link: Function
         }
     }
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-root.render(<App />)
+root.render(
+    <>
+        <App />
+    </>
+)

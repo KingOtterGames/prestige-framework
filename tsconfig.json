@@ -14,7 +14,19 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react-jsx"
+        "jsx": "react-jsx",
+        "noUnusedLocals": false,
+        "sourceMap": true,
+        "rootDir": ".",
+        "baseUrl": "./src/",
+        "paths": {
+            "@modules/*": ["modules/*"],
+            "@core/*": ["core/*"],
+            "@assets/*": ["assets/*"],
+            "@views/*": ["views/*"],
+            "@shared/*": ["shared/*"],
+            "@utils/*": ["utils/*"]
+        }
     },
     "include": ["src"]
 }

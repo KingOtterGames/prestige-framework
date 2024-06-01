@@ -1,6 +1,7 @@
 import { IpcMain } from 'electron'
 import * as utils from './utils'
 import * as fs from 'fs'
+import { shell } from 'electron'
 
 export const init = (ipcMain: IpcMain, steamClient: any, db: any, gamedir: string) => {
     ipcMain.handle('save', (event, data) => {
@@ -71,5 +72,9 @@ export const init = (ipcMain: IpcMain, steamClient: any, db: any, gamedir: strin
 
     ipcMain.handle('achievement', (event, key) => {
         steamClient.achievement.activate(key)
+    })
+
+    ipcMain.handle('link', (event, url) => {
+        shell.openExternal(url)
     })
 }
