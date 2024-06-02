@@ -6,5 +6,10 @@ import * as SharedConstants from '@shared/constants'
 import * as SharedTypes from '@shared/types'
 import * as SharedHelpers from '@shared/helpers'
 
-export const exampleAction: SharedTypes.Action = (state: SharedTypes.State, payload: any) => {}
-exampleAction.dispatch = SharedHelpers.Dispatch.format(Constants.moduleName, exampleAction)
+/**
+ * This is an Example Action. It's best to write something descriptive here for easy reference.
+ */
+export const exampleAction = (state: SharedTypes.State, payload: exampleActionPayloadType): SharedTypes.State => {
+    return state
+}
+export type exampleActionPayloadType = {}

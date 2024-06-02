@@ -7,7 +7,6 @@ export interface Props {
     dispatch: any
 }
 
-export interface Action {
-    (state: State, payload: any): void
-    dispatch: string
+export interface DataProps {
+    data: State
 }
