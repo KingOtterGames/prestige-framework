@@ -17,6 +17,7 @@
         "jsx": "react-jsx",
         "noUnusedLocals": false,
         "sourceMap": true,
+        "types": ["node", "webpack-env"],
         "rootDir": ".",
         "baseUrl": ".",
         "paths": {
