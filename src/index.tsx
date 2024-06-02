@@ -7,7 +7,7 @@ declare global {
         api: {
             save: Function
             load: Function
-            delete: Function
+            remove: Function
             db: Function
             achievement: Function
             link: Function

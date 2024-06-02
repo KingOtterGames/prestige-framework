@@ -1,18 +1,16 @@
-import StateType from '@shared/stateType'
 export * as actions from './_actions'
 export * as helpers from './_helpers'
 export * as types from './_types'
 export * as constants from './_constants'
 
-const moduleName = 'ModuleName.'
-export enum DISPATCH {
-    exampleAction = moduleName + 'exampleAction',
-}
+import * as SharedConstants from '@shared/constants'
+import * as SharedTypes from '@shared/types'
+import * as SharedHelpers from '@shared/helpers'
 
-export const onUpdate = (state: StateType, deltaTime: number) => {
+export const onUpdate = (state: SharedTypes.State, deltaTime: number) => {
     return state
 }
 
-export const onFixedUpdate = (state: StateType, deltaTime: number) => {
+export const onFixedUpdate = (state: SharedTypes.State, deltaTime: number) => {
     return state
 }

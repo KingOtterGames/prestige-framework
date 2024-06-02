@@ -55,7 +55,7 @@ export const init = (ipcMain: IpcMain, steamClient: any, db: any, gamedir: strin
         })
     })
 
-    ipcMain.handle('delete', (event) => {
+    ipcMain.handle('remove', (event) => {
         try {
             fs.unlinkSync(gamedir + '/save.json')
             console.log('Save has been deleted...')

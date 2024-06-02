@@ -12,11 +12,11 @@
         "version:full": "concurrently \"cross-env BROWSER=none npm run run:frontend\" \"set REACT_APP_DEMO=false && npm run run:electron\" \"cpx \"electron/data/database.db\" \"build/electron/data\"\"",
         "version:demo": "concurrently \"cross-env BROWSER=none npm run run:frontend\" \"set REACT_APP_DEMO=true && npm run run:electron\" \"cpx \"electron/data/database.db\" \"build/electron/data\"\"",
         "run:electron": "wait-on http://127.0.0.1:3000 && tsc -p electron && electron .",
-        "run:frontend": "react-scripts start",
+        "run:frontend": "craco start",
         "package": "sh ./.automations/package.sh",
         "package:clean": "rimraf ./build && rimraf ./dist",
-        "package:build:full": "set REACT_APP_DEMO=false && react-scripts build && tsc -p electron && cpx \"electron/data/database.db\" \"build/electron/data\"",
-        "package:build:demo": "set REACT_APP_DEMO=true && react-scripts build && tsc -p electron && cpx \"electron/data/database.db\" \"build/electron/data\"",
+        "package:build:full": "set REACT_APP_DEMO=false && craco build && tsc -p electron && cpx \"electron/data/database.db\" \"build/electron/data\"",
+        "package:build:demo": "set REACT_APP_DEMO=true && craco build && tsc -p electron && cpx \"electron/data/database.db\" \"build/electron/data\"",
         "package:pack": "electron-builder --dir"
     },
     "build": {
@@ -38,7 +38,10 @@
         "extends": [
             "react-app",
             "react-app/jest"
-        ]
+        ],
+        "rules": {
+            "@typescript-eslint/no-unused-vars": "off"
+        }
     },
     "browserslist": {
         "production": [
@@ -60,11 +63,14 @@
     },
     "devDependencies": {
         "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+        "@craco/craco": "^7.1.0",
+        "@craco/types": "^7.1.0",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^14.4.3",
         "@types/electron-devtools-installer": "^2.2.2",
         "@types/jest": "^29.4.0",
+        "@types/lodash.clonedeep": "^4.5.9",
         "@types/node": "^18.13.0",
         "@types/react": "^18.0.28",
         "@types/react-dom": "^18.0.11",

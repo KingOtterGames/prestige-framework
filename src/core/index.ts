@@ -1,3 +1,3 @@
-export * as images from './images'
-export * as saves from './saves'
-export * as state from './state'
+export * as Images from './Images'
+export * as Saves from './Saves'
+export * as State from './State'

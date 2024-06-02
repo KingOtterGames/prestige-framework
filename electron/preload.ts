@@ -6,8 +6,8 @@ contextBridge.exposeInMainWorld('api', {
     load: () => {
         return ipcRenderer.invoke('load')
     },
-    delete: () => {
-        return ipcRenderer.invoke('delete')
+    remove: () => {
+        return ipcRenderer.invoke('remove')
     },
     db: (query: string) => {
         return ipcRenderer.invoke('db', query)

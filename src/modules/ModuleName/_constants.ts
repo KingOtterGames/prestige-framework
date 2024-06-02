@@ -1,1 +1,1 @@
-export const exampleConstant: number = 0
+export const moduleName: string = 'ModuleName'
