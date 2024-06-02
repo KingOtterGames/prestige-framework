@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import './index.css'
+import '@styles/_main.css'
 import App from './App'
 
 declare global {
