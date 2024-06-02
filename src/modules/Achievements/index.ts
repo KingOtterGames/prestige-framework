@@ -12,6 +12,5 @@ export const onUpdate = (state: SharedTypes.State, { deltaTime }: SharedTypes.Up
 }
 
 export const onFixedUpdate = (state: SharedTypes.State, { deltaTime }: SharedTypes.FixedUpdatePayload) => {
-    state.gold++
     return state
 }

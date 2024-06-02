@@ -1,5 +1,5 @@
 import { useState, useEffect, useReducer } from 'react'
-import { ModuleName } from '@modules'
+import { Currencies } from '@modules'
 import * as Core from '@core'
 import * as SharedTypes from '@shared/types'
 import * as SharedConstants from '@shared/constants'
@@ -92,7 +92,7 @@ function Game({ data }: SharedTypes.DataProps) {
         <div>
             <h1>{SharedConstants.PROJECT_NAME}</h1>
             <p>Gold: {state.gold}</p>
-            <button onClick={() => dispatch({ func: ModuleName.actions.exampleAction, payload: {} })}>Click</button>
+            <button onClick={() => dispatch({ func: Currencies.actions.exampleAction, payload: {} })}>Click</button>
         </div>
     )
 }

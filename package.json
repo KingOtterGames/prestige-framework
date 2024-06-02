@@ -58,7 +58,6 @@
     "dependencies": {
         "better-sqlite3": "^10.0.0",
         "electron-reload": "^1.5.0",
-        "seedrandom": "^3.0.5",
         "steamworks.js": "^0.0.26"
     },
     "devDependencies": {
@@ -81,6 +80,7 @@
         "cross-env": "^7.0.3",
         "electron": "^23.3.13",
         "electron-builder": "^23.6.0",
+        "seedrandom": "^3.0.5",
         "lodash.clonedeep": "^4.5.0",
         "node-gyp": "^10.1.0",
         "nodemon": "^3.1.2",

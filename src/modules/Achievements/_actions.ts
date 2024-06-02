@@ -10,7 +10,6 @@ import * as SharedHelpers from '@shared/helpers'
  * This is an Example Action. It's best to write something descriptive here for easy reference.
  */
 export const exampleAction = (state: SharedTypes.State, payload: exampleActionPayloadType): SharedTypes.State => {
-    state.gold += 10
     return state
 }
 export type exampleActionPayloadType = {}
