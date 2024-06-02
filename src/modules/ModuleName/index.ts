@@ -7,10 +7,11 @@ export * as helpers from './_helpers'
 export * as types from './_types'
 export * as constants from './_constants'
 
-export const onUpdate = (state: SharedTypes.State, deltaTime: number) => {
+export const onUpdate = (state: SharedTypes.State, { deltaTime }: SharedTypes.UpdatePayload) => {
     return state
 }
 
-export const onFixedUpdate = (state: SharedTypes.State, deltaTime: number) => {
+export const onFixedUpdate = (state: SharedTypes.State, { deltaTime }: SharedTypes.FixedUpdatePayload) => {
+    state.gold++
     return state
 }

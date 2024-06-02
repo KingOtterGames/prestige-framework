@@ -13,5 +13,5 @@ const toTitleCase = (str: string) => {
 export const PROJECT_NAME: string | undefined = toTitleCase(process.env.REACT_APP_NAME?.replaceAll('-', ' ') || 'Undefined Name')
 export const PROJECT_VERSION: string | undefined = process.env.REACT_APP_VERSION
 
-export const AUTO_SAVE_TIMER: number = 5
+export const AUTO_SAVE_TIMER_MINUTES: number = 0.5
 export const OFFLINE_PROGRESS: boolean = true

@@ -27,9 +27,7 @@ try {
 /**
  * Connect to the Embedded DB
  */
-const db = require('better-sqlite3')(path.join(__dirname, 'data', 'database.db').replace('app.asar', 'app.asar.unpacked'), {
-    verbose: console.log,
-})
+const db = require('better-sqlite3')(path.join(__dirname, 'data', 'database.db').replace('app.asar', 'app.asar.unpacked'))
 
 /**
  * Pre-load Options for Chromium
