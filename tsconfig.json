@@ -29,7 +29,11 @@
             "@views/*": ["src/views/*"],
             "@shared/*": ["src/shared/*"],
             "@utils/*": ["src/utils/*"],
-            "@styles/*": ["src/styles/*"]
+            "@styles/*": ["src/styles/*"],
+            "@content/*": ["src/content/*"],
+            "@content": ["src/content/index"],
+            "@controllers/*": ["src/controllers/*"],
+            "@controllers": ["src/controllers/index"]
         }
     },
     "include": ["src"]

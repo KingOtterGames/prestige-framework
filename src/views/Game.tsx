@@ -1,12 +1,24 @@
 import { useState, useEffect, useReducer } from 'react'
 import { Currencies } from '@modules'
 import * as Core from '@core'
+import * as Controller from '@controllers'
+import * as Modules from '@modules/index'
 import * as SharedTypes from '@shared/types'
 import * as SharedConstants from '@shared/constants'
 import * as SharedHelpers from '@shared/helpers'
+import * as ViewTypes from '@views/_types'
+import Content from '@content'
 
-function Game({ data }: SharedTypes.DataProps) {
+function Game({ data }: ViewTypes.DataProps) {
     const [state, dispatch] = useReducer(Core.Dispatcher.reducer, data)
+
+    useEffect(() => {
+        Controller.Achievements.give(dispatch, 'TEST')
+        Controller.Upgrades.upgrade(dispatch, 'BEST')
+        console.log(state)
+        // Controllers.Currencies.add(dispatch, Currencies.types.Currencies.GOLD, 100)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     /**
      * Gameplay Loop
@@ -76,7 +88,6 @@ function Game({ data }: SharedTypes.DataProps) {
      */
     useEffect(() => {
         const handler = () => {
-            console.log(state)
             Core.Saves.save(state)
         }
 
@@ -91,8 +102,18 @@ function Game({ data }: SharedTypes.DataProps) {
     return (
         <div>
             <h1>{SharedConstants.PROJECT_NAME}</h1>
-            <p>Gold: {state.gold}</p>
-            <button onClick={() => dispatch({ func: Currencies.actions.exampleAction, payload: {} })}>Click</button>
+            <p>Gold: {state.currencies.gold}</p>
+            <button
+                onClick={() => {
+                    const payload: Currencies.actions.addPayloadType = {
+                        currency: Currencies.types.Currencies.GOLD,
+                        amount: 10,
+                    }
+                    dispatch({ func: Currencies.actions.add, payload: payload })
+                }}
+            >
+                Click
+            </button>
         </div>
     )
 }

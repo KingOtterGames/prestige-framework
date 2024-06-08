@@ -1,6 +1,6 @@
 {
     "name": "your-game-name",
-    "version": "0.1.0",
+    "version": "abc",
     "author": "Your Company Name",
     "description": "React-TypeScript-Electron sample with Create React App and Electron Builder",
     "homepage": ".",
@@ -58,7 +58,8 @@
     "dependencies": {
         "better-sqlite3": "^10.0.0",
         "electron-reload": "^1.5.0",
-        "steamworks.js": "^0.0.26"
+        "steamworks.js": "^0.0.26",
+        "type-fest": "^4.19.0"
     },
     "devDependencies": {
         "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -80,13 +81,13 @@
         "cross-env": "^7.0.3",
         "electron": "^23.3.13",
         "electron-builder": "^23.6.0",
-        "seedrandom": "^3.0.5",
         "lodash.clonedeep": "^4.5.0",
         "node-gyp": "^10.1.0",
         "nodemon": "^3.1.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-scripts": "5.0.1",
+        "seedrandom": "^3.0.5",
         "typescript": "^4.9.5",
         "uuid": "^9.0.1",
         "wait-on": "^7.0.1",

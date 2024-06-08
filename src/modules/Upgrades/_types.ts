@@ -1,3 +1,4 @@
-export interface ExampleType {
-    example: string
+export interface CurrentUpgradeType {
+    id: string
+    level: number
 }

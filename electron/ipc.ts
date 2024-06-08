@@ -52,10 +52,9 @@ export const init = (ipcMain: IpcMain, steamClient: any, db: any, gamedir: strin
         }
     })
 
-    ipcMain.handle('db', (event, query) => {
-        return new Promise((res) => {
-            res(db.prepare(query).all())
-        })
+    ipcMain.on('db', (event, query) => {
+        const data = db.prepare(query).all()
+        event.returnValue = data
     })
 
     ipcMain.handle('achievement', (event, key) => {

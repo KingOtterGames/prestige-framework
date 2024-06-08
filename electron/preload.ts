@@ -10,7 +10,7 @@ contextBridge.exposeInMainWorld('api', {
         return ipcRenderer.invoke('remove')
     },
     db: (query: string) => {
-        return ipcRenderer.invoke('db', query)
+        return ipcRenderer.sendSync('db', query)
     },
     achievement: (key: string) => {
         return ipcRenderer.invoke('achievement', key)

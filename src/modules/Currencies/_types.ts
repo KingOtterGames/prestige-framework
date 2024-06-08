@@ -1,3 +1,3 @@
-export interface ExampleType {
-    example: string
+export enum Currencies {
+    GOLD = 'gold',
 }
