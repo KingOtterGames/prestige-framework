@@ -102,7 +102,7 @@ function Game({ data }: ViewTypes.DataProps) {
     return (
         <div>
             <h1>{SharedConstants.PROJECT_NAME}</h1>
-            <p>Gold: {state.currencies.gold}</p>
+            <p>Gold: {SharedHelpers.NumberFormat.whole(state.currencies.gold)}</p>
             <button
                 onClick={() => {
                     const payload: Currencies.actions.addPayloadType = {

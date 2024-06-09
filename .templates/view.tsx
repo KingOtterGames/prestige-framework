@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { useState, useEffect } from 'react'
 import * as Core from '@core'
-import * as Controllers from '@controllers'
+import * as Controller from '@controllers'
 import * as Modules from '@modules/index'
 import * as ViewTypes from '@views/_types'
 import * as SharedTypes from '@shared/types'

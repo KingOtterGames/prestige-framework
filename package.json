@@ -58,10 +58,10 @@
     "dependencies": {
         "better-sqlite3": "^10.0.0",
         "electron-reload": "^1.5.0",
-        "steamworks.js": "^0.0.26",
-        "type-fest": "^4.19.0"
+        "steamworks.js": "^0.0.26"
     },
     "devDependencies": {
+        "type-fest": "^4.19.0",
         "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
         "@craco/craco": "^7.1.0",
         "@craco/types": "^7.1.0",
