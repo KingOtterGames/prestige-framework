@@ -114,6 +114,26 @@ function Game({ data }: ViewTypes.DataProps) {
             >
                 Click
             </button>
+            <p>Currency: {SharedHelpers.NumberFormat.currency(123456.9876)}</p>
+            <p>Whole: {SharedHelpers.NumberFormat.whole(123456.9876)}</p>
+            <p>Engineering: {SharedHelpers.NumberFormat.engineering(123456.9876)}</p>
+            <p>Scientific: {SharedHelpers.NumberFormat.scientific(123456.9876)}</p>
+            <p>Compact: {SharedHelpers.NumberFormat.standardCompact(123456.9876)}</p>
+            <p>Standard: {SharedHelpers.NumberFormat.standard(123456.9876)}</p>
+            <h1>Very Large Numbers</h1>
+            <p>Currency: {SharedHelpers.NumberFormat.currency(1234561234567.9876)}</p>
+            <p>Whole: {SharedHelpers.NumberFormat.whole(1234561234567.9876)}</p>
+            <p>Engineering: {SharedHelpers.NumberFormat.engineering(1234561234567.9876)}</p>
+            <p>Scientific: {SharedHelpers.NumberFormat.scientific(1234561234567.9876)}</p>
+            <p>Compact: {SharedHelpers.NumberFormat.standardCompact(12345612343434567.9876)}</p>
+            <p>Standard: {SharedHelpers.NumberFormat.standard(1234561234567.9876)}</p>
+            <h1>Time</h1>
+            <p>Long: {SharedHelpers.NumberFormat.timeLong(1)}</p>
+            <p>Long: {SharedHelpers.NumberFormat.timeLong(60)}</p>
+            <p>Long: {SharedHelpers.NumberFormat.timeLong(3600)}</p>
+            <p>Short: {SharedHelpers.NumberFormat.timeShort(1)}</p>
+            <p>Short: {SharedHelpers.NumberFormat.timeShort(60)}</p>
+            <p>Short: {SharedHelpers.NumberFormat.timeShort(3600)}</p>
         </div>
     )
 }
