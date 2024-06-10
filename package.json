@@ -9,6 +9,7 @@
     "scripts": {
         "start": "nodemon --watch ./electron/data/database.db --exec npm run version:full",
         "start:demo": "nodemon --watch ./electron/data/database.db --exec npm run version:demo",
+        "rebuild": "electron-rebuild",
         "version:full": "concurrently \"cross-env BROWSER=none npm run run:frontend\" \"set REACT_APP_DEMO=false && npm run run:electron\" \"cpx \"electron/data/database.db\" \"build/electron/data\"\"",
         "version:demo": "concurrently \"cross-env BROWSER=none npm run run:frontend\" \"set REACT_APP_DEMO=true && npm run run:electron\" \"cpx \"electron/data/database.db\" \"build/electron/data\"\"",
         "run:electron": "wait-on http://127.0.0.1:3000 && tsc -p electron && electron .",
@@ -91,6 +92,7 @@
         "typescript": "^4.9.5",
         "uuid": "^9.0.1",
         "wait-on": "^7.0.1",
-        "web-vitals": "^3.1.1"
+        "web-vitals": "^3.1.1",
+        "electron-rebuild": "^3.2.9"
     }
 }
