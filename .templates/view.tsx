@@ -7,7 +7,6 @@ import * as ViewTypes from '@views/_types'
 import * as SharedTypes from '@shared/types'
 import * as SharedConstants from '@shared/constants'
 import * as SharedHelpers from '@shared/helpers'
-import * as ViewTypes from '@views/_types'
 import Content from '@content'
 
 function Game({ state, dispatch }: Types.BaseProps) {
